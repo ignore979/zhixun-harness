@@ -1,0 +1,4 @@
+{
+  "ensemble": {"k": 1, "decay": 1.0, "mode": "recency"},
+  "coral": {"strength": 0.25, "ridge": 1.0}
+}

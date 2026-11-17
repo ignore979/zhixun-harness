@@ -1,0 +1,13 @@
+.git
+指导
+data
+artifacts
+evidence
+tests
+docs
+**/__pycache__
+**/*.pyc
+**/*.egg-info
+.env*
+*.key
+*.token

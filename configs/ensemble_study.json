@@ -1,0 +1,27 @@
+{
+  "protocol": "temporal-ensemble-coral-v1",
+  "registered_before_round8_results": true,
+  "source_runs": ["run-fair-flat-20261116T072500-61797031", "run-replay-always-20261115T130311-4ed48495"],
+  "development_batches": [2,3,4,5,6,7],
+  "audit_batches": [8,9,10],
+  "independence": "reused_public_development_audit_not_blind_generalization",
+  "ensemble_variants": [
+    {"name":"k1","k":1,"decay":1.0,"mode":"recency"},
+    {"name":"k3","k":3,"decay":0.9,"mode":"recency"},
+    {"name":"k5","k":5,"decay":0.9,"mode":"recency"},
+    {"name":"k5_equal","k":5,"decay":1.0,"mode":"recency"},
+    {"name":"all_equal","k":null,"decay":1.0,"mode":"recency"},
+    {"name":"class_k3","k":3,"decay":0.9,"mode":"class_reliability"},
+    {"name":"class_k5","k":5,"decay":0.9,"mode":"class_reliability"}
+  ],
+  "first_stage_strengths": [0.0,0.25],
+  "strength_grid": [0.10,0.15,0.20,0.25,0.30,0.40],
+  "ridge_grid": [0.5,1.0,2.0],
+  "reliability_window": 2,
+  "reliability_shrinkage": 20.0,
+  "selection": "development_accuracy_max_subject_to_macro_f1_g_mean_acetaldehyde_recall_not_below_k1_coral025",
+  "audit_acceptance": "accuracy_strictly_increases_and_macro_f1_g_mean_acetaldehyde_recall_not_decrease_vs_same_source_k1_coral025",
+  "additional_training_epochs": 0,
+  "future_checkpoints_allowed": false,
+  "target_labels_in_adaptation": false
+}

@@ -1,0 +1,15 @@
+{
+  "protocol": "public-validation-drift-loop-v1",
+  "psi_threshold": 0.25,
+  "conf_drop_threshold": 0.05,
+  "policy": "rule",
+  "budget": {
+    "max_training_seconds": 900.0,
+    "max_seconds_per_round": 300.0,
+    "max_updates": 3,
+    "max_llm_calls": 0
+  },
+  "max_rollback_evaluations": 3,
+  "validation_role": "unchanged_public_development_validation",
+  "training_role": "original_public_train_only"
+}

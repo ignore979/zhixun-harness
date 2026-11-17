@@ -1,0 +1,26 @@
+{
+  "protocol": "domain_views_after_negative_ensemble_v1",
+  "reason": "Registered after stage1/2 ensembles and CORAL fine-tuning failed the temporal audit gate",
+  "source_runs": ["run-fair-flat-20261116T072500-61797031","run-replay-always-20261115T130311-4ed48495"],
+  "development_batches": [2,3,4,5,6,7],
+  "audit_batches": [8,9,10],
+  "selection": "development_accuracy_max_subject_to_macro_f1_g_mean_acetaldehyde_recall_not_below_coral025",
+  "audit_acceptance": "strict_accuracy_gain_and_other_three_metrics_not_below_coral025",
+  "independence": "repeated_public_development_followup_not_new_blind_test",
+  "methods": [
+    {"name":"identity","kind":"identity","strength":0.0},
+    {"name":"coral025","kind":"coral","strength":0.25,"ridge":1.0},
+    {"name":"block01","kind":"block_coral","strength":0.1,"block_size":8},
+    {"name":"block025","kind":"block_coral","strength":0.25,"block_size":8},
+    {"name":"block05","kind":"block_coral","strength":0.5,"block_size":8},
+    {"name":"diagonal01","kind":"diagonal","strength":0.1},
+    {"name":"diagonal025","kind":"diagonal","strength":0.25},
+    {"name":"diagonal05","kind":"diagonal","strength":0.5},
+    {"name":"cov025_mean0","kind":"split_coral","strength":0.25,"mean_strength":0.0},
+    {"name":"cov025_mean01","kind":"split_coral","strength":0.25,"mean_strength":0.1},
+    {"name":"cov05_mean01","kind":"split_coral","strength":0.5,"mean_strength":0.1},
+    {"name":"past_shift025","kind":"past_class_shift","strength":0.25,"window":2},
+    {"name":"past_shift05","kind":"past_class_shift","strength":0.5,"window":2},
+    {"name":"two_view_equal","kind":"multi_view","strength":0.25}
+  ]
+}

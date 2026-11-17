@@ -1,0 +1,37 @@
+{
+  "stage": "followup_after_round5_primary_negative_results",
+  "motivation": "isolate the effect of training amount from strong weighting; inspect lower LR for width migration",
+  "not_independent_confirmation": true,
+  "prior_study": "artifacts/efficiency-study-20261115T125822/study.json",
+  "A_variants": [
+    "unweighted_scheduled",
+    "unweighted_memory",
+    "soft_scheduled"
+  ],
+  "strategies": [
+    "always",
+    "performance"
+  ],
+  "B_cases": [
+    {
+      "hidden": 24,
+      "epochs": 20,
+      "lr": 0.001,
+      "decay": 0.5
+    },
+    {
+      "hidden": 24,
+      "epochs": 20,
+      "lr": 0.0003,
+      "decay": 0.5
+    },
+    {
+      "hidden": 96,
+      "epochs": 20,
+      "lr": 0.0003,
+      "decay": 0.5
+    }
+  ],
+  "gate": "unchanged",
+  "no_more_parameter_search_in_this_round": true
+}

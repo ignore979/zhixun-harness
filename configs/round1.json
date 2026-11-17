@@ -1,0 +1,11 @@
+{
+  "protocol_id": "public-cpu-continuation-round1-v1",
+  "epochs": 5,
+  "learning_rate": 0.001,
+  "max_epochs": 50,
+  "max_seconds": 300,
+  "candidate_count": 1,
+  "selection": "fixed_final_epoch",
+  "validation_role": "public_development_validation",
+  "cpu_threads": 1
+}

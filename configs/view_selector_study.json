@@ -1,0 +1,19 @@
+{
+  "protocol": "causal_domain_view_selection_followup_v1",
+  "registered_after": "Negative ensemble and domain-views global prefix selection",
+  "source_domain_study": "artifacts/study-domain-20261116T084204/study.json",
+  "expert_pool": "all_14_previously_registered_domain_views_no_audit_based_expert_filtering",
+  "development_batches": [2,3,4,5,6,7],
+  "audit_batches": [8,9,10],
+  "policies": [
+    {"name":"leader1","mode":"leader","window":1,"eta":1.0},
+    {"name":"leader2","mode":"leader","window":2,"eta":1.0},
+    {"name":"hedge1","mode":"hedge","window":2,"eta":1.0},
+    {"name":"hedge05","mode":"hedge","window":2,"eta":0.5}
+  ],
+  "leader_objective": "mean_of_accuracy_and_fixed_six_class_macro_f1_on_past_batches",
+  "hedge_objective": "past_class_balanced_cross_entropy_baseline_half_prior_weight",
+  "selection": "development_accuracy_with_macro_f1_g_mean_acetaldehyde_constraints",
+  "current_labels_used_by_predict": false,
+  "independence": "followup_on_reused_public_development_not_independent_test"
+}

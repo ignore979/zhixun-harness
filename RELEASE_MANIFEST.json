@@ -1,0 +1,24 @@
+{
+  "image_file": "zhixun-official-linux-amd64-20261117T002217094783.tar",
+  "image_sha256": "bbf87d277281d307242fe42b8749520a9e28789f757c760779d7d05db29813e3",
+  "image_bytes": 86419456,
+  "source_snapshot_sha256": "7baba8a80aa8226a0e04271fe0ff5e98f11d3164de510968f4ef47a0af70600a",
+  "sdk_protocol": "contest.harness.workspace.v2",
+  "image_source_files_verified": {
+    "submission/contest_submission.py": "00b25372a242d600715738d13d8b3f0686aa04492df3b9315675a34bfedd34c2",
+    "src/zhixun/contest_runtime.py": "93926a9396e56e33743bb21fc640bbee3900d526e97ec8fc4e607019d7e7f613",
+    "src/zhixun/data.py": "3353328621427881debda5f2d8f43042b66089e525e162e8a91f020f87a2cb92",
+    "src/zhixun/metrics.py": "d8a34941189da17ea36c9e9aa064836dc6d96d2ad539a42e6d23737a67f66cdb",
+    "src/zhixun/model_extension.py": "4ecc9bee1bc01ace15e14c5e3cfe8d525a683bfe248fa2a118b68f0333606a12",
+    "src/zhixun/tracking.py": "dcacdd010972b95cb4e87bd421a30b561f853e1842e32b23ae4fc050a44c1af4",
+    "src/zhixun/__init__.py": "f9cdeb68354bb72e0f6716800e404cd56e7652516f557ce7a9611561835fab75",
+    "src/zhixun/vendor/data.py": "6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "src/zhixun/vendor/model.py": "325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "src/zhixun/vendor/__init__.py": "920291bddac93abcca5c945cd42dce49aab024f92b3a1f5792c18afb0bf425e3"
+  },
+  "local_project_tests": 116,
+  "official_sdk_tests": 15,
+  "container_round_checks": 5,
+  "model_replies_in_container_checks": "local_host_stand_in",
+  "real_platform_sampler_verified": false
+}

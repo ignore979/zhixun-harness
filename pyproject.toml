@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zhixun"
+version = "0.1.0"
+description = "Auditable CPU model continuation for industrial drift experiments"
+requires-python = ">=3.11,<3.13"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/zhixun/vendor/model.py" = ["ALL"]
+"src/zhixun/vendor/data.py" = ["ALL"]
+"submission/official_sdk_1_0_2/**" = ["ALL"]

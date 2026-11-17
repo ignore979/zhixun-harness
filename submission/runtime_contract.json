@@ -1,0 +1,47 @@
+{
+  "format": "zhixun.internal-submission-contract.v2",
+  "verification_status": "official_sdk_1_0_2_locally_verified",
+  "official_reference": "https://rsi-index.115.zone/downloads/contest-harness-sdk-1.0.2.tar.gz",
+  "official_archive_sha256": "c676c8beeef69cece9cbec5a633d05dbb9832eb22b6f761913f2315bd1f85133",
+  "protocol": "contest.harness.workspace.v2",
+  "model_access": "host_gateway_rpc",
+  "entrypoint": [
+    "python3",
+    "/app/harness.py"
+  ],
+  "smoke_test_args": [
+    "describe"
+  ],
+  "workspace_mounts": {
+    "/app": "read-only",
+    "/data": "read-only",
+    "/previous": "read-only",
+    "/state": "read-only",
+    "/model": "read-only",
+    "/workspace": "writable",
+    "/tmp": "writable"
+  },
+  "model_environment_variables": {
+    "identity": "SDK start frame model_name",
+    "credentials": "host-owned; no image secret",
+    "prediction": [
+      "CONTEST_ARTIFACT_PATH",
+      "CONTEST_ARTIFACT_MANIFEST",
+      "CONTEST_PREDICTION_CONTEXT",
+      "CONTEST_DATASET_KEY",
+      "CONTEST_TASK"
+    ]
+  },
+  "artifact_format": {
+    "checkpoint_paths": "nonempty list",
+    "code_paths": "list",
+    "predict_argv": [
+      "python3",
+      "/app/harness.py",
+      "predict"
+    ]
+  },
+  "real_platform_sampler_verified": false,
+  "formal_hidden_evaluation_performed": false,
+  "note": "Use build_official_image.py. The older generic build_and_save.ps1 is superseded; local model replies are explicit host doubles."
+}

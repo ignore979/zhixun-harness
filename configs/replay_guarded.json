@@ -1,0 +1,82 @@
+{
+  "protocol": "uci-gas-fair-agent-v4",
+  "total_epoch_budget": 45,
+  "max_training_seconds": 900,
+  "max_seconds_per_round": 300,
+  "max_llm_calls": 8,
+  "generation_max_tokens": 256,
+  "cw_power": 0.5,
+  "lr_decay": 0.5,
+  "terminal_batch_training": false,
+  "flat_allocation": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    5,
+    5,
+    5,
+    0
+  ],
+  "offline_cost_weight_per_epoch": 0.001,
+  "oracle_training_decision_batches": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "oracle_evaluation_decision_batches": [
+    7,
+    8
+  ],
+  "oracle_training_next_batch_max": 7,
+  "fixed_final_epoch": true,
+  "action_catalog": [
+    {
+      "action": "hold",
+      "epochs": 0,
+      "learning_rate": 0.0,
+      "target_version": null
+    },
+    {
+      "action": "retrain",
+      "epochs": 2,
+      "learning_rate": 0.0005,
+      "target_version": null
+    },
+    {
+      "action": "retrain",
+      "epochs": 5,
+      "learning_rate": 0.001,
+      "target_version": null
+    },
+    {
+      "action": "retrain",
+      "epochs": 6,
+      "learning_rate": 0.001,
+      "target_version": null
+    },
+    {
+      "action": "retrain",
+      "epochs": 10,
+      "learning_rate": 0.001,
+      "target_version": null
+    }
+  ],
+  "teacher_source_runs": [
+    "run-replay-always-20261115T125834-f1076328",
+    "run-replay-performance-20261115T125842-8f21a9c8",
+    "run-replay-always-20261115T125848-2ff7035b",
+    "run-replay-performance-20261115T125856-a030f41c",
+    "run-replay-performance-20261115T125912-d06a6dac",
+    "run-replay-performance-20261115T130246-5a4a248b"
+  ],
+  "evaluation_scope": "repeated_public_development_stream_not_independent_test",
+  "reward_floor_ratio": 0.99,
+  "reward_reference": "same_state_actual_flat_action_next_accuracy",
+  "promotion_accuracy_ratio": 0.99,
+  "promotion_macro_f1_ratio": 0.99,
+  "llm_timeout_seconds": 90
+}

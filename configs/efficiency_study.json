@@ -1,0 +1,38 @@
+{
+  "purpose": "training efficacy, local public development data; no hidden-test claim",
+  "frozen_before_new_results": true,
+  "A_cases": [
+    "control",
+    "weighted",
+    "scheduled",
+    "memory"
+  ],
+  "A_strategies": [
+    "static",
+    "always",
+    "performance"
+  ],
+  "static_reused_across_variants": "same initial frozen checkpoint and inputs; no fit differences",
+  "A_primary": [
+    "prequential_sample_weighted_accuracy",
+    "prequential_mean_batch_macro_f1"
+  ],
+  "B_cases": [
+    {
+      "hidden": 24,
+      "epochs": 5
+    },
+    {
+      "hidden": 96,
+      "epochs": 5
+    },
+    {
+      "hidden": 96,
+      "epochs": 20
+    }
+  ],
+  "B_lr": 0.001,
+  "B_20_epoch_decay": 0.5,
+  "selection_gate": "unchanged dual-metric gate; fixed final epoch, no best-epoch selection",
+  "no_claimed_design_numbers_assumed_true": true
+}

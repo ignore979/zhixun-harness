@@ -1,0 +1,7 @@
+{
+  "primary_policy_evaluation_batches": [8, 9, 10],
+  "reason": "oracle SFT training labels look ahead at most to batch7",
+  "full_stream_summary": "descriptive_development_score_with_policy_training_overlap",
+  "independence": "all batches were used in prior public development; no blind-test claim",
+  "declared_before_agent_rollout": true
+}

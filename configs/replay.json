@@ -1,0 +1,17 @@
+{
+  "protocol": "uci-gas-prequential-local-replay-v1",
+  "strategies": ["static", "always", "performance"],
+  "performance_metric": "macro_f1",
+  "performance_drop_threshold": 0.05,
+  "psi_threshold": 0.25,
+  "conf_drop_threshold": 0.05,
+  "epochs": 5,
+  "learning_rate": 0.001,
+  "max_updates": 9,
+  "max_training_seconds": 900.0,
+  "max_seconds_per_round": 300.0,
+  "max_rollback_evaluations": 3,
+  "labels_available": "after_prediction_before_decision",
+  "pool_release": "after_decision",
+  "normalization": "original_batch1_unchanged"
+}

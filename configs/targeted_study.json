@@ -1,0 +1,24 @@
+{
+  "protocol": "prior-and-domain-ablation-v1",
+  "registration_phase": "before_new_ablation_results",
+  "development_batches": [2, 3, 4, 5, 6, 7],
+  "audit_batches": [8, 9, 10],
+  "independence": "repeated_public_development_not_independent_test",
+  "source_runs": [
+    "run-fair-flat-20261115T140649-319e289d",
+    "run-replay-always-20261115T130311-4ed48495"
+  ],
+  "methods": [
+    {"name": "identity", "kind": "identity"},
+    {"name": "history_exact_w3", "kind": "history", "strength": 1.0, "smoothing": 0.000001},
+    {"name": "history_soft_w3", "kind": "history", "strength": 0.5, "smoothing": 10.0},
+    {"name": "bbse_soft", "kind": "bbse", "strength": 0.5, "ridge": 0.01},
+    {"name": "bbse_full", "kind": "bbse", "strength": 1.0, "ridge": 0.01},
+    {"name": "coral_soft", "kind": "coral", "strength": 0.25, "ridge": 1.0},
+    {"name": "coral_half", "kind": "coral", "strength": 0.5, "ridge": 1.0},
+    {"name": "coral_full", "kind": "coral", "strength": 1.0, "ridge": 1.0}
+  ],
+  "selection_rule": "development_accuracy_gain_and_non_decreasing_mean_macro_f1_else_identity",
+  "target_feature_access": "bbse_and_coral_use_whole_current_unlabeled_batch",
+  "training_trace": "fixed_historical_parents_no_retraining_or_current_label_gate_change"
+}

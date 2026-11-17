@@ -1,0 +1,17 @@
+FROM python_base
+WORKDIR /opt/zhixun
+ENV PYTHONPATH=/opt/zhixun/src PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+ENV OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+COPY requirements.txt requirements-pytrio.txt ./
+RUN --mount=type=bind,source=wheels,target=/wheels \
+    pip install --no-cache-dir --no-index --find-links=/wheels -r requirements-pytrio.txt \
+    && pip check
+COPY src ./src
+COPY configs ./configs
+COPY data ./data
+COPY submission/trial_entrypoint.py ./submission/trial_entrypoint.py
+COPY run.py README.md NOTICE.md TRIAL_IMAGE.json ./
+LABEL org.opencontainers.image.title="zhixun-local-project-trial"
+LABEL org.opencontainers.image.description="Public-data project trial; official runtime protocol unverified"
+ENTRYPOINT ["python", "-B", "submission/trial_entrypoint.py"]
+CMD ["run"]

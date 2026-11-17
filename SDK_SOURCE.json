@@ -1,0 +1,9 @@
+{
+  "sdk_version": "1.0.2",
+  "sdk_source": "https://rsi-index.115.zone/downloads/contest-harness-sdk-1.0.2.tar.gz",
+  "sdk_archive_sha256": "c676c8beeef69cece9cbec5a633d05dbb9832eb22b6f761913f2315bd1f85133",
+  "protocol": "contest.harness.workspace.v2",
+  "model_access": "host_gateway_rpc",
+  "local_data_or_weights_bundled": false,
+  "external_pytrio_client_bundled": false
+}
